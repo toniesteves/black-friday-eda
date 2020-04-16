@@ -417,6 +417,9 @@ df.hist(column='Purchase_stand');
 
 
 ![png](images/output_37_0.png)
+<p align="center">
+  <img width="400" height="300" src="images/output_37_0.png">
+</p>
 
 
 A ideia da padronização é fazer com que ao executarmos modelos (regressão logística, SVMs, perceptrons, redes neurais etc.), os pesos estimados serão atualizados de maneira semelhante e não utilizará taxas diferentes durante o processo de criação. Isso fornecerá resultados mais precisos quando os dados forem padronizados pela primeira vez.
