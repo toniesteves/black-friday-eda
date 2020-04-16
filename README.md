@@ -1,11 +1,10 @@
 
-# Desafio 1
+# Aceleradev DS Week 2 - Challenge
 
-Para esse desafio, vamos trabalhar com o data set [Black Friday](https://www.kaggle.com/mehdidag/black-friday), que reúne dados sobre transações de compras em uma loja de varejo.
+Vamos trabalhar com o data set [Black Friday](https://www.kaggle.com/mehdidag/black-friday), que reúne dados sobre transações de compras em uma loja de varejo.
 
 Vamos utilizá-lo para praticar a exploração de data sets utilizando pandas. Você pode fazer toda análise neste mesmo notebook, mas as resposta devem estar nos locais indicados.
 
-> Obs.: Por favor, não modifique o nome das funções de resposta.
 
 ## _Set up_ da análise
 
@@ -20,8 +19,6 @@ import matplotlib.pyplot as plt
 ```python
 black_friday = pd.read_csv(r'data/black_friday.csv')
 ```
-
-## Inicie sua análise a partir daqui
 
 
 ```python
@@ -149,7 +146,7 @@ black_friday.head()
 
 
 ```python
-missing_data_summary = pd.DataFrame({'columns': black_friday.columns, 'types': black_friday.dtypes, 
+missing_data_summary = pd.DataFrame({'columns': black_friday.columns, 'types': black_friday.dtypes,
                                      'missing (%)': black_friday.isnull().mean().round(4) * 100})
 missing_data_summary
 ```
@@ -350,7 +347,7 @@ black_friday.hist(column='Purchase');
 ```
 
 
-![png](output_25_0.png)
+![png](images/output_25_0.png)
 
 
 Podemos ver que há uma concentração de valores logo após 5000 (moda) e depois disso temos uns picos entre 15000 e 1600 e posteriormente em 2000.
@@ -359,11 +356,11 @@ Podemos ver que há uma concentração de valores logo após 5000 (moda) e depoi
 ```python
 def q8():
     # Retorne aqui o resultado da questão 8.
-    
+
     _min = black_friday['Purchase'].min()
     _max = black_friday['Purchase'].max()
     _norm = (black_friday['Purchase'] - _min)/(_max-_min)
-    
+
 
     return float(_norm.mean())
 ```
@@ -376,14 +373,14 @@ A normalização redimensiona os valores em um intervalo de `[0,1]`. Isso pode s
 
 
 ```python
-df = pd.DataFrame({'Purchase_norm' : (black_friday['Purchase'] - 
-                                      black_friday['Purchase'].min())/(black_friday['Purchase'].max() - 
+df = pd.DataFrame({'Purchase_norm' : (black_friday['Purchase'] -
+                                      black_friday['Purchase'].min())/(black_friday['Purchase'].max() -
                                                                        black_friday['Purchase'].min())})
 df.hist(column='Purchase_norm');
 ```
 
 
-![png](output_31_0.png)
+![png](images/output_31_0.png)
 
 
 Todos os valores agora estão entre `0` e `1`, e caso houvessem outliers ele teriam desaparecido Nossos recursos agora são mais consistentes entre si, o que nos permitirá avaliar melhor a produção de nossos futuros modelos. Além disso, se usássemos algoritmos nesse conjunto de dados antes de normalizarmos, seria difícil (potencialmente não possível) convergir os vetores por causa dos problemas de dimensionamento. A normalização torna os dados mais condicionados à convergência.
@@ -400,7 +397,7 @@ def q9():
     _mean = black_friday["Purchase"].mean()
     _std = black_friday["Purchase"].std()
     _stand = (black_friday['Purchase'] - _mean)/(_std)
-    
+
     return int(_stand[_stand.between(-1,1)].count())
 ```
 
@@ -415,7 +412,7 @@ df.hist(column='Purchase_stand');
 ```
 
 
-![png](output_37_0.png)
+![png](images/output_37_0.png)
 
 
 A ideia da padronização é fazer com que ao executarmos modelos (regressão logística, SVMs, perceptrons, redes neurais etc.), os pesos estimados serão atualizados de maneira semelhante e não utilizará taxas diferentes durante o processo de criação. Isso fornecerá resultados mais precisos quando os dados forem padronizados pela primeira vez.
