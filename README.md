@@ -407,7 +407,7 @@ def q9():
 A padronização redimensiona os dados para ter uma média ($\mu$) de 0 e desvio padrão ($\sigma$) de 1 (variação unitária). A padronização  por sua vez, tende a tornar o processo de treinamento mais uniforme, porque a condição numérica dos problemas de otimização é aprimorada, e é dada pela seguinte fórmula:
 
 <p align="center">
-  <img width="500" height="100" src="images/standartization.png">
+  <img width="300" height="100" src="images/standartization.png">
 </p>
 
 ```python
