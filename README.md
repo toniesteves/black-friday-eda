@@ -367,7 +367,8 @@ def q8():
 
 A normalização redimensiona os valores em um intervalo de `[0,1]`. Isso pode ser útil em alguns casos em que todos os parâmetros precisam ter a mesma escala positiva. No entanto, os outliers do conjunto de dados são perdidos. Assim, 1. A normalização torna o treinamento menos sensível à escala de recursos, para que possamos resolver melhor os coeficientes e é dada pela seguinte fórmula:
 
-<center>$\LARGE X_{changed} = {X - X_{min} \over X_{max} - X_{min}}$</center>
+
+![png](images/normalization.png)
 
  Vamos visualizar a distribuição da nossa variável `Purchase_norm` após a normalização.
 
@@ -403,7 +404,7 @@ def q9():
 
 A padronização redimensiona os dados para ter uma média ($\mu$) de 0 e desvio padrão ($\sigma$) de 1 (variação unitária). A padronização  por sua vez, tende a tornar o processo de treinamento mais uniforme, porque a condição numérica dos problemas de otimização é aprimorada, e é dada pela seguinte fórmula:
 
-<center>$\LARGE X_{changed} = {X - \mu \over \sigma}$</center>
+![png](images/standartization.png)
 
 
 ```python
