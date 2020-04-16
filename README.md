@@ -346,8 +346,9 @@ Antes de inciarmos vamos olhar como é a distribuição da nossa variável `Purc
 black_friday.hist(column='Purchase');
 ```
 
-
-![png](images/output_25_0.png)
+<p align="center">
+  <img width="500" height="100" src="images/output_25_0.png">
+</p>
 
 
 Podemos ver que há uma concentração de valores logo após 5000 (moda) e depois disso temos uns picos entre 15000 e 1600 e posteriormente em 2000.
@@ -383,7 +384,9 @@ df.hist(column='Purchase_norm');
 ```
 
 
-![png](images/output_31_0.png)
+<p align="center">
+  <img width="400" height="300" src="images/output_31_0.png">
+</p>
 
 
 Todos os valores agora estão entre `0` e `1`, e caso houvessem outliers ele teriam desaparecido Nossos recursos agora são mais consistentes entre si, o que nos permitirá avaliar melhor a produção de nossos futuros modelos. Além disso, se usássemos algoritmos nesse conjunto de dados antes de normalizarmos, seria difícil (potencialmente não possível) convergir os vetores por causa dos problemas de dimensionamento. A normalização torna os dados mais condicionados à convergência.
@@ -416,7 +419,6 @@ df.hist(column='Purchase_stand');
 ```
 
 
-![png](images/output_37_0.png)
 <p align="center">
   <img width="400" height="300" src="images/output_37_0.png">
 </p>
